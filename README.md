@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="assets/woman-code.png" alt="Front-End Checklist" width="170">
+  <img src="assets/woman-code.png" alt="Front-End Checklist" width="328">
   <br>
     <br>
         Semana 4
