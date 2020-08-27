@@ -12,8 +12,7 @@
 
 1. [Objetos](#objetos)
 2. [Arrays](#arrays)
-3. [Conteúdo extra](#conteúdo-extra)
-4. [Referências](#referências)
+3. [Referências](#referências)
 
 ---
 
@@ -128,16 +127,17 @@ console.log(alunasReprograma[2]) // Mariana
 
 ### Principais métodos
 
-- `indexOf` retorna a posição do item passado por parâmetro.
+- `filter` retorna um novo array com os elementos filtrados.
+- `find` retorna o primeiro elemento que achar igual ao elemento passado por parâmetro.
+- `indexOf` retorna a posição do item passado por parâmetro ou -1 caso não tenha encontrado.
 - `lenght` retorna um número que representa o tamanho do array.
-- `pop` remove o último item do array.
-- `push` adiciona um item na última posição do array.ß
-- `shift` remove o primeiro item do array.
-- `slice` copia o array para outra variável
+- `map` retorna um novo array sem alterar o array original, criando uma cópia com as alterações que desejamos.
+- `pop` remove e retorn o último item do array.
+- `push` adiciona um item na última posição do array.
+- `shift` remove e retorna o primeiro item do array.
+- `slice` copia o array para outra variável.
 - `splice` remove o item da posição passada por parâmetro.
 - `unshift` adiciona um item na primeira posição do array.
-
-## Conteúdo extra
 
 ## Referências
 
