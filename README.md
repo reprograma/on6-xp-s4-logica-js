@@ -109,10 +109,6 @@ const alunasReprograma = ['Andreia', 'Fernanda', 'Mariana', ...];
 const alunasReprograma = new Array('Andreia', 'Fernanda', 'Mariana', ...);
 ```
 
-```javascript
-const alunasReprograma = new Array(35); // cria um array com 35 posições
-```
-
 ### Acessando valores
 
 Para acessar o valor de um Array, use a notação de colchetes e informe a posição que deseja acessar, lembrando que a contagem começa em zero.
@@ -145,6 +141,7 @@ console.log(alunasReprograma[2]) // Mariana
 
   - [Arrays](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array)
   - [Convertendo Objeto em Array](https://www.samanthaming.com/tidbits/76-converting-object-to-array/) - em inglês
+  - [Funções em JS](https://dev.to/mandypry/functions-em-js-cc6)
   - [JavaScript - Métodos: find( ), map( ) e filter( )](https://medium.com/reprogramabr/m%C3%A9todos-de-arrays-find-map-e-filter-dcbbdf7c5be0)
   - [Notação de Ponto vs Notação de Colchetes](https://www.samanthaming.com/tidbits/65-dot-vs-bracket-notation/)- em inglês
   - [Trabalhando com objetos](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Trabalhando_com_Objetos#:~:text=A%20linguagem%20JavaScript%20%C3%A9%20projetada,considerada%20um%20m%C3%A9todo%20do%20objeto.)
