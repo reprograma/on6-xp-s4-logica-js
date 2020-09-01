@@ -36,21 +36,53 @@ function mostrarFruta(posicao){
 console.log(mostrarFruta(1))
 console.log(mostrarFruta(35))
 
-/*
-Escolha 2 itens de hortifruti e mostre a posição dele, usando a
-função acima. Entre esses 2, adicione 1 que um item novo
-/*
+console.log(mostrarFruta(2))
+
+/* Escolha 2 itens de hortifruti e mostre a posição dele, usando a
+função acima. Entre esses 2, adicione 1 que um item novo */
 
 
-/* adicione três itens na lista hortifruti /*
+console.log(mostrarFruta(4))
+console.log(mostrarFruta(1))
 
-/* remova o item na posição 3 /*
+//metodo splice para adicionar ou remover elementos no meio do array
+//primeiro argumento: posição inicial
+//segundo argumento: quantos itens ele vai vai remover do nosso array
+//terceiro argumento: elemento a ser adicionado na posicão passada no primeiro argumento, caso o segundo argumento segundo argumento seja 0
 
+hortifruti.splice(1, 0, "abacate", "goiaba") //adiciona abacate entre maçã e banana
+console.log(hortifruti) // [ 'uva', 'abacate', 'goiaba', 'maça', 'banana', 'alface', 'pera' ]
+
+hortifruti.splice(3, 2, "atemoia")
+console.log(hortifruti) // ['uva', 'abacate', 'goiaba', 'atemoia', 'alface', 'pera']
+
+hortifruti.splice(1, 3)
+console.log(hortifruti) //['uva', 'alface', 'pera']
+
+/* adicione três itens na lista hortifruti */
+
+hortifruti.push('atemoia')
+hortifruti.push('laranja')
+hortifruti.push('melancia')
+
+console.log(hortifruti)
+/* remova o item na posição 3 */
+
+hortifruti.splice(3, 1) //3 é a posição inicial e 1 é a quantidade de itens que eu quero apagar
+console.log(hortifruti) 
+
+hortifruti.splice(3,2)
+console.log(hortifruti)
 
 /*
 crie um array chamado 'aluno1' que receberá 4 itens que serão suas notas no semestre (crie valores aleatórios)
-/*
+*/
 
-/*
+const aluno1 = [1, 3, 7, 5, 10]
+
+
 //mostre no console essas notas organizadas por ordem crescente
-/* */
+
+
+console.log(aluno1.sort()) //ordena em ordem crescente
+console.log(aluno1.sort(function(a, b){return a-b})) //buscar entender o porquê

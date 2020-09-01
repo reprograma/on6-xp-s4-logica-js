@@ -17,7 +17,7 @@ let pessoa = {
     altura: 1.69,
     peso: 62,
     andando: false,
-    caminhouQuantosMetros: -20.
+    caminhouQuantosMetros: -20
 };
 
 /*
