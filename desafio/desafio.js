@@ -9,11 +9,13 @@ const projeto1 = {
     idProjeto: 1,
     tituloDoProjeto: 'Semana 04',
     descricaoDoProjeto: 'exercicio da semana',
-    pessoasResponsaveis: [{idPessoa: 123, nome: 'Yasminn', setor: 'tecnologia'}, {idPessoa: 987, nome: 'Larissa', setor: 'tecnologia'}],
-    pessoasColaboradoras: [{idPessoa: 345, nome: 'Andreza', setor: 'tecnologia'}],
+    pessoasResponsaveis: [{idPessoa: 123, nomePessoa: 'Yasminn', setor: 'tecnologia'}, {idPessoa: 987, nome: 'Larissa', setor: 'tecnologia'}],
+    pessoasColaboradoras: [{idPesgitsoa: 345, nomePessoa: 'Andreza', setor: 'tecnologia'}],
     dataInicio: '29/08/2020',
     statusDoProjeto: 'em andamento'
 }
+
+console.log(projeto1)
 
 // CRIE MAIS DOIS OBJETOS COM INFORMACOES DIFERENTES
 
@@ -28,12 +30,3 @@ console.log(listaDeProjetos, 'Lista de projetos vazia')
 
 adicionaProjeto(projeto1) // adiciona o projeto1 a lista de projetos utilizando a função criada
 
-
-//Exercício 4
-
-function status(statusdoProjeto){
-    if (statusdoProjeto === "em andamento"){
-   return "Lista de projetos em andamento"}
-}
-
-status(statusdoProjeto)
