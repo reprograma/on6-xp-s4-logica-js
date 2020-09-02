@@ -1,24 +1,39 @@
-//Exercicio 1
 
-const ListadeProjetos= []
+// Exercicio 1
 
-//Exercicio 2
+const listaDeProjetos = []
+
+// Exercício 2
 
 const projeto1 = {
-    idProjeto: 1, 
-    tituloDoProjeto: "Semana 04",
+    idProjeto: 1,
+    tituloDoProjeto: 'Semana 04',
     descricaoDoProjeto: 'exercicio da semana',
-    pessoasResponsaveis: [{IdPessoa:123, nome:'Nanda', setor: 'tecnologia'},{IdPessoa:345, nome:'Julia', setor: 'tecnologia'}, {IdPessoa:356, nome:'Karol', setor: 'tecnologia'} ],
-    PessoasColaboradas: [{IdPessoa:345, nome:'Andreza', setor: 'tecnologia'}],
+    pessoasResponsaveis: [{idPessoa: 123, nome: 'Yasminn', setor: 'tecnologia'}, {idPessoa: 987, nome: 'Larissa', setor: 'tecnologia'}],
+    pessoasColaboradoras: [{idPessoa: 345, nome: 'Andreza', setor: 'tecnologia'}],
     dataInicio: '29/08/2020',
-    statusdoProjeto: "em andamento"
+    statusDoProjeto: 'em andamento'
 }
 
-function adicionaProjeto(projeto1){
-    return ListadeProjetos.push(projeto1)
+// CRIE MAIS DOIS OBJETOS COM INFORMACOES DIFERENTES
+
+
+// Exercício 3
+
+function adicionaProjeto(projeto){
+    return listaDeProjetos.push(projeto)
 }
-console.log(ListadeProjetos, 'Lista de Projeto Vazia')
 
-adicionaProjeto()
+console.log(listaDeProjetos, 'Lista de projetos vazia')
 
-console.log(ListadeProjetos, 'Lista de Projetos com um Projeto')
+adicionaProjeto(projeto1) // adiciona o projeto1 a lista de projetos utilizando a função criada
+
+
+//Exercício 4
+
+function status(statusdoProjeto){
+    if (statusdoProjeto === "em andamento"){
+   return "Lista de projetos em andamento"}
+}
+
+status(statusdoProjeto)
