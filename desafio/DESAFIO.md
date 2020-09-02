@@ -1,4 +1,4 @@
-<h1 align="center">
+t<h1 align="center">
   <br>
   <img src="../assets/developer.png" alt="Front-End Checklist" width="250">
   <br>
