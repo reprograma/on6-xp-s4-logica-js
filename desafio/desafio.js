@@ -26,10 +26,10 @@ const projeto2 = {
 const projeto3 = {
     idProjeto: 3,
     tituloDoProjeto: 'Projeto de artes',
-    descricaoDoProjeto: 'DDesafio semana 5',
+    descricaoDoProjeto: 'Desafio semana 5',
     pessoasResponsaveis: [{idPessoa: 856, nome: 'Diego', setor: 'tecnologia'}, {idPessoa: 596, nome: 'Shirley', setor: 'tecnologia'}],
     pessoasColaboradoras: [{idPessoa: 798, nome: 'Paula', setor: 'tecnologia'}],
-    dataInicio: '30/05/2020',
+    dataInicio: '30/06/2020',
     statusDoProjeto: 'em andamento'
 }
 
@@ -103,18 +103,48 @@ console.log("________________________________")
    - Se o id do projeto NÃO existir, retorne a mensagem "Projeto não encontrado!"
      > Dica: use o método que filtre as informações do Array */
 
-function acharId (numero) {
-    const id = numero;
-    const achar = (listaDeProjetos.filter((projeto) => projeto.idProjeto == id));
-   
-   /*if (achar !== null){
-    console.log(achar)
 
-   } else {
-       console.log(`Projeto não encontrado`)
-   }*/
-    
+     //atribui a variavel projetoEncontrado o retorno do filtro
+     // projeto é cada posição do array que o filtro vai acessar para buscar nossa condição
+     // return é o resultado da nossa condição
+
+function buscarProjeto(idProjeto) {
+    let projetoEncontrado = listaDeProjetos.filter(function (projeto) {
+        return projeto.idProjeto === idProjeto;
+    });
+    return projetoEncontrado
+
+    if (projetoEncontrado !== undefined) {
+        return `Projeto não encontrado!`
+    } else {
+        return projetoEncontrado
+    }
 }
-   
-    console.log(acharId(6))
+
+    console.log(buscarProjeto(3))
     console.log("________________________________")
+
+
+    /*8. Crie uma função com as seguintes características:
+
+   - A função deve receber dois parâmetros: idProjeto e idPessoa
+   - Se o idProjeto existir, verifique se o idPessoa existe na lista de pessoas resposáveis e retorne um boleano
+     > Dica1: use a função criada no exercício 7 para verificar se o projeto existe  
+     > Dica2: use o método que procura por algum elemento igual ao passado por parâmetro no array de pessoasResponsávaeis
+    */
+
+     function mostrarResponsavel (idProjeto, idPessoa) {
+         let projeto = buscarProjeto(idProjeto);
+         let responsavel = projeto.pessoasResponsaveis.find(function (responsavel){
+            return responsavel.idPessoa === idPessoa;
+         });
+
+         if (responsavel !== undefined) {
+            return true;
+         } else {
+            return false;
+         }
+     }
+
+     console.log(mostrarResponsavel (2, 522))
+     console.log(mostrarResponsavel (2, 1999))
