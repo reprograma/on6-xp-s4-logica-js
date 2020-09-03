@@ -113,7 +113,7 @@ function buscarProjeto(idProjeto) {
     // tambem poderiamos usar o metodo find
 
     /*let projetoEncontrado = listaDeProjetos.filter(function (projeto){
-        return projeto.idProjeto === idProjeto;
+        return projeto.idProjeto === idProjeto; pesquisar
     });*/
     let projetoEncontrado = listaDeProjetos.find(function (projeto){
         return projeto.idProjeto === idProjeto;
