@@ -137,24 +137,15 @@ console.log("__________________________________")
 //Exercicio 8
 
 function mostrarResponsavel(idProjeto, idPessoa) {
-    let projeto = buscarProjeto(idProjeto);
+  let projeto = buscarProjeto(idProjeto);
+  let responsavel = projeto.pessoasResponsaveis.filter(function (responsavel) {
+    return responsavel.idPessoa === idPessoa;
+  });
 
-    let responsavel = projeto.pessoasResponsaveis.filter(function (responsavel) {
-      return responsavel.idPessoa === idPessoa;
-    });
-  
-    if (responsavel === undefined) {
+  return responsavel;
+}
 
-      return false;
-
-    } else {
-
-      return true;
-    }
-  }
-  
-  console.log(mostrarResponsavel(3, 785858));
-  console.log(mostrarResponsavel(1, 666));
+console.log(mostrarResponsavel(2, 589));
 console.log("__________________________________")
 
 //Exercicio 9
@@ -167,35 +158,37 @@ function autorizarAlteracao (idProjeto, idPessoa, statusDoProjeto) {
     } else if (!responsavelNaoPermitido) {
         return `Você não tem autorização para alterar este projeto!`
     } else if (statusDoProjeto === 'encerrado') {
-        return `O projeto "${listaDeProjetos[projeto].tituloProjeto}" já foi encerrado e não pode ser editado!`
+        return `O projeto ${listaDeProjetos[projeto].tituloProjeto} já foi encerrado e não pode ser editado!`
     } else {
      return `Permissão para alteração concedida!`
     }
 }
 
 console.log(autorizarAlteracao(3, 132, 'em andamento'))
-console.log(autorizarAlteracao(1, 123))
 console.log("__________________________________")
 
 // Ex 10
 
-function Modificar(idProjeto, idPessoa) {
-
+function alterando(idProjeto,idPessoa){
     let projetoNaoEncontrado = buscarProjeto(idProjeto)
     let responsavelNaoPermitido = mostrarResponsavel(idProjeto, idPessoa)
-  
+
     if (projetoNaoEncontrado === `Projeto não encontrado`) {
-        return "ID Inválido"
-    } else  if (!responsavelNaoPermitido) {
-        return "Você não tem autorização para alterar este projeto!"
-    }  else {
-        if (listaDeProjetos.statusDoProjeto !== 'em andamento') {
-            return ` O Projeto ${listaDeProjetos.tituloProjeto} já foi encerrado.`
-        } else {
-            return `O status do projeto foi modificado de "em andamento" para "encerrado"`
-        }
+        return `Id inválido`
+
+    } else if (!responsavelNaoPermitido) {
+        return `Você não tem autorização para alterar este projeto!`
+
+    } else if (statusDoProjeto === 'em andamento') {
+        return `O  status do projeto ${listaDeProjetos[projeto].tituloProjeto} foi alterado para encerrado!`
+       
+
+    } else {
+        return `O projeto ${listaDeProjetos[projeto].tituloProjeto} já foi encerrado e não pode ser editado!`
+     
     }
-  
-  }
-  
-  console.log(Modificar(2, 345))
+
+}
+
+console.log(alterando(3, 132))
+console.log("__________________________________")
