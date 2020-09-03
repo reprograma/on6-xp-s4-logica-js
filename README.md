@@ -40,17 +40,6 @@ pessoa.idade = 25;
 pessoa.profissao = 'desenvolvedora';
 ```
 
-```javascript
-function Pessoa(nome, idade, profissao) {
-  this.nome = nome;
-  this.idade = idade;
-  this.profissao = profissao;
-}
-
-const pessoa1 = new Pessoa('Ariel', 25, 'desenvolvedora');
-const pessoa2 = new Pessoa('Laura', 34, 'tech lead');
-```
-
 ### Acessando valores
 
 Notação de ponto
@@ -132,7 +121,7 @@ console.log(alunasReprograma[2]) // Mariana
 - `push` adiciona um item na última posição do array.
 - `shift` remove e retorna o primeiro item do array.
 - `slice` copia o array para outra variável.
-- `splice` remove o item da posição passada por parâmetro.
+- `splice` remove o item da posição passada por parâmetro
 - `unshift` adiciona um item na primeira posição do array.
 
 E muito mais!
