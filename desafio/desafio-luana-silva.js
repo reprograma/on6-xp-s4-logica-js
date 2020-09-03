@@ -42,10 +42,10 @@ adicionarProjeto(projeto2);
 adicionarProjeto(projeto3);
 
 function retornarListaProjetos(){
-    return listaProjetos;
+    return `Lista de projetos \n ${JSON.stringify(listaProjetos)}`;
 }
 
-console.log("Lista de projetos \n", retornarListaProjetos());
+console.log(retornarListaProjetos());
 
 function retornarStatusDoProjetoPelaPosicaoNaLista(posicao){
     if(typeof listaProjetos[posicao] === "object"){
