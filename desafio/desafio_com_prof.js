@@ -54,45 +54,71 @@ console.log(listaDeProjetos)
 console.log("--------------------------------------------------------------")
 
 //4
-console.log(`Lista de projetos:`, listaDeProjetos)
+
+function listaProjetos(){
+    return `Lista de Projetos: ${JSON.stringify(listaDeProjetos)}`
+}
+
+console.log(listaProjetos())
 
 console.log("--------------------------------------------------------------")
 
 //5
-//console.log(listaDeProjetos)
 
-function posicaoProjeto(posicao){
-if(listaDeProjetos[posicao] !== undefined){
-    return `O projeto "${listaDeProjetos[posicao].tituloDoProjeto}", na posição "${posicao}" está com o status "${listaDeProjetos[posicao].statusDoProjeto}".`
-    
-}else{
-    
-    return `Projeto não encontrado`
+function posicaoDoProjeto (p){
+    if(listaDeProjetos[p] === undefined){
+        return `Projeto não encontrado`
+    }else{
+        return `O "${listaDeProjetos[p].tituloDoProjeto}" está na posição ${p} e seu status é "${listaDeProjetos[p].statusDoProjeto}"`
+    }
 }
-
-}
-
-console.log(posicaoProjeto(9))
-console.log(posicaoProjeto(0))
+console.log(posicaoDoProjeto(1))
+console.log(posicaoDoProjeto(2))
+console.log(posicaoDoProjeto(9))
 
 console.log("--------------------------------------------------------------")
 
 //6
-function totalProjeto(){
-    if(listaDeProjetos.length > 1){
-    return `Temos ${listaDeProjetos.length} projetos cadastrados.`
-}else{
-    return `Temos ${listaDeProjetos.length} projeto cadastrado.`
-}
-}
-console.log(totalProjeto())
+
+function totalDeProjetos(){
+    let objetos = listaDeProjetos.length
+    let plural = 'projetos cadastrados'
+    let singular = 'projeto cadastrado'
+
+    if(objetos > 1) {
+        return `Temos o total de ${objetos} ${plural}`
+    }else{
+        return `Temos o total de ${objetos} ${singular}`
+
+    }
+    }
+console.log(totalDeProjetos())
 
 console.log("--------------------------------------------------------------")
 
 //7
 
-function existeProjeto(id){
-    
+function buscarProjeto(idProjeto){
+    // atribui a variavel projetoEncontrado e retorno do filtro
+// projeto é cada posição do array que o filyto vai acessar para buscar nossa condição
+//return é o resultado da nossa condição
+// também poderiamos usar o método find
+    let projetoEncontrado = listaDeProjetos.filter(function(projeto){
+        return projeto.idProjeto === idProjeto
+    })
 
-
+    if(projetoEncontrado !== undefined){
+        return projetoEncontrado
+    }else{
+        `Projeto não encontrado`
+    }
+   
 }
+//console.log(buscarProjeto(3))
+console.log(buscarProjeto(999))
+
+console.log("--------------------------------------------------------------")
+
+//8
+
+function mostrarResponsavel()
