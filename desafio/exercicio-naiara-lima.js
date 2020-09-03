@@ -148,8 +148,8 @@ function autorizaAlterar(idProjeto, idPessoa, statusDoProjeto) {
   let funcaoEx8 = mostrarResponsavel(idProjeto, idPessoa)
 
   if (funcaoEx7 === "Projeto nao encontrado") {
-    return "ID Inválido";
-  } else if (!funcaoEx8) {
+    return "ID não existe";
+  } else if (funcaoEx8 === false) {
     return "Você não tem autorização para alterar este projeto!.";
   } else if (statusDoProjeto === "Encerrado") {
     return `O projeto ${listaDeProjetos[projeto].tituloProjeto} já foi encerrado e não pode ser editado!`
@@ -158,9 +158,8 @@ function autorizaAlterar(idProjeto, idPessoa, statusDoProjeto) {
   }
 }
 
-
-console.log(autorizaAlterar(3, 321, 0))
-console.log(autorizaAlterar(1, 654, 0))
+//console.log(autorizaAlterar(1, 123,))
+console.log(autorizaAlterar(3, 654,))
 
 
 // exercicio 10
@@ -187,6 +186,7 @@ function Modificar(idProjeto, idPessoa) {
 }
 
 console.log(Modificar(1, 123))
+console.log(Modificar(3, 123))
 
 
 
