@@ -7,8 +7,8 @@ const projeto1 = {
     idProjeto: 1,
     tituloProjeto: "XP Investimentos",
     descricaoDoProjeto: "Uma das maiores empresas de investimentos do Brasil. Atua de forma imparcial e possui soluções alinhadas aos interesses e perfil de cada investidor.",
-    pessoasResponsaveis: [{idPessoa: 123, nome: "Nathália", setor: "Tecnologia"},{idPessoa: 987, nome: "Larissa", setor: "Tecnologia"}],
-    pessoasColaboradoras: [{idPessoa: 345, nome: "Andreza", setor: "Tecnologia"}, {idPessoa: 470, nome: "Amanda", setor: "Tecnologia"}],
+    pessoasResponsaveis: [{idPessoa: 123, nome: "Nathália", setor: "Tecnologia"},{idPessoa: 987, nome: "Larissa", setor: "Marketing"}],
+    pessoasColaboradoras: [{idPessoa: 345, nome: "Andreza", setor: "Tecnologia"}, {idPessoa: 470, nome: "Amanda", setor: "Marketing"}],
     dataInicio: "29/08/2020",
     statusDoProjeto: "Encerrado"
 };
@@ -19,7 +19,7 @@ const projeto2 = {
     descricaoDoProjeto: "Como a maior instituição de educação financeira do país, a XP Educação oferece uma grade completa de cursos e palestras sobre investimentos, com opções para todos os perfis de investidor.",
     pessoasResponsaveis: [
         { idPessoa: 444, nome: "Fernanda", setor: "Tecnologia" }, 
-        { idPessoa: 870, nome: "Tamires", setor: "Tecnologia" }],
+        { idPessoa: 870, nome: "Tamires", setor: "Novos negócios" }],
     pessoasColaboradoras: [
         { idPessoa: 634, nome: "Flávia", setor: "Tecnologia" }],
     dataInicio: "30/08/2020",
@@ -32,7 +32,7 @@ const projeto3 = {
     descricaoDoProjeto: "Soluções patrimoniais e gestão de fundos exclusivos a partir de carteiras administradas sob medida, com o suporte de uma arquitetura aberta de produtos e time de gestão com expertise global.",
     pessoasResponsaveis: [
         { idPessoa: 096, nome: "Cristina", setor: "Tecnologia" }, 
-        { idPessoa: 992, nome: "Beatriz", setor: "Tecnologia" }],
+        { idPessoa: 992, nome: "Beatriz", setor: "Novos negócios" }],
     pessoasColaboradoras: [
         { idPessoa: 200, nome: "Bianca", setor: "Tecnologia" }],
     dataInicio: "31/08/2020",
@@ -63,45 +63,42 @@ function projetosCadastrados () {
 
 
 //------Exercício 5
-function encontra(valor) {
-    if (typeof listaDeProjetos[valor] === "object"){
-        return `O projeto ${listaDeProjetos[valor].tituloProjeto} na posição ${listaDeProjetos[valor].idProjeto} está com o status ${listaDeProjetos[valor].statusDoProjeto}`
-    } else {
+function encontra(posicao) {
+    if (listaDeProjetos[posicao] === undefined){
         return "Projeto não encontrado"
+    } else {
+        return `O projeto ${listaDeProjetos[posicao].tituloProjeto} na posição ${listaDeProjetos[posicao].idProjeto} está com o status ${listaDeProjetos[posicao].statusDoProjeto}`
     }
 }
 
-// console.log(encontra(2))
+ // console.log(encontra(1))
 
 
 //------Exercício 6
 function somaProjetos() {
 
-    let soma = 0
-    for (let i = 0; i <= listaDeProjetos.length; i++) {
-        soma = i
-    }
-
+    let total = listaDeProjetos.length
     let projetos = "projetos"
     let cadastrados = "cadastrados"
 
-    if (soma === 1) {
+    if (total === 1) {
         projetos = "projeto"
         cadastrados = "cadastrado"
     }
 
-    return `Temos ${soma} ${projetos} ${cadastrados}`
+    return `Temos ${total} ${projetos} ${cadastrados}`
 }
-
 
 // console.log(somaProjetos())
 
 
 //------Exercício 7
-function acharId(valor) {
-    const resultado = listaDeProjetos.find(projeto => projeto.idProjeto === valor)
+function acharId(id) {
+    const resultado = listaDeProjetos.find(function (projeto) {
+        return projeto.idProjeto === id
+    })
 
-    if (resultado) {
+    if (resultado !== undefined) {
         return resultado
     } else {
         return "Projeto nao encontrado"
@@ -109,12 +106,13 @@ function acharId(valor) {
 
 }
 
-// console.log(acharId(1))
+// console.log(acharId(2))
 
 
 //------Exercício 8
 function existeProjeto (projeto, pessoa) {
-    
+// Se ele não encontrar o projeto já retorna false,
+// Se encontrar o projeto, valida se existe a pessoa ou não
 
     let funcaoExercicio7 = acharId(projeto) 
 
@@ -132,7 +130,9 @@ function existeProjeto (projeto, pessoa) {
     
 }
 
-// console.log(existeProjeto(1, 444))
+//  console.log(existeProjeto(1, 123))
+//  console.log(existeProjeto(4, 123))
+//  console.log(existeProjeto(1, 444))
 
 
 //------Exercicio 9
@@ -157,7 +157,7 @@ function autorizaAlterar(projeto, pessoa, status) {
 
 }
 
-// console.log(autorizaAlterar(2, 444, "Encerrado"))
+// console.log(autorizaAlterar(1, 123, "Em andamento"))
 
 
 //------Exercicio 10
@@ -181,7 +181,7 @@ function queroModificar(projeto, pessoa) {
         
 }
 
-console.log(queroModificar(1, 123))
+// console.log(queroModificar(2, 444))
 
 
 // With love and tears, Nathália Santos (kkkkkkk)
