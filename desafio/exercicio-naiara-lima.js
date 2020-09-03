@@ -118,17 +118,22 @@ console.log(buscarProjeto(999)); // retorna projeto não encontrado
 
 
 // exercicio 8
+console.log("mostrar responsável")
 
 function mostrarResponsavel(idProjeto, idPessoa) {
   let projeto = buscarProjeto(idProjeto);
-  let responsavel = projeto.pessoasResponsaveis.filter(function (responsavel) {
+  //let responsavel = projeto.pessoasResponsaveis.filter(function (responsavel) {
+    let responsavel = projeto.pessoasResponsaveis.find(function (responsavel) {
     return responsavel.idPessoa === idPessoa;
   });
 
-  if (responsavel === undefined) {
-    return false;
-  } else {
+  if (responsavel !== undefined) {
+  //if (responsavel === undefined) {  
     return true;
+    //return false;
+  } else {
+    return false;
+    //return true;
   }
 }
 
