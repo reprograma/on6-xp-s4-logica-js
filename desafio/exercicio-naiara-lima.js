@@ -163,35 +163,51 @@ function autorizaAlterar(idProjeto, idPessoa, statusDoProjeto) {
   }
 }
 
-//console.log(autorizaAlterar(1, 123,))
-console.log(autorizaAlterar(3, 654,))
+console.log(autorizaAlterar(1, 123, 'em andamento'))
+//console.log(autorizaAlterar(3, 654,))
+
+
+// ///resolução alternativa que NÃO ATENDE À QUESTÃO
+
+// function autorizarAlteracao (idProjeto, idPessoa, statusDoProjeto) {
+
+//   let funcaoExercicio7 = buscarProjeto(idProjeto)
+//   let funcaoExercicio8 = mostrarResponsavel(idProjeto, idPessoa)
+
+//   if (funcaoExercicio7 !== 'Projeto não encontrado' && funcaoExercicio8 === true && statusDoProjeto === 'em andamento') {
+//       return 'Permissão concedida';
+//   } else {
+//       return 'Permissão negada'
+//   }
+// }
+
 
 
 // exercicio 10
 
 console.log("ex 10 alterar projeto")
 
-function Modificar(idProjeto, idPessoa) {
+function modificar(idProjeto, idPessoa) {
 
   let funcaoEx7 = buscarProjeto(idProjeto)
   let funcaoEx8 = mostrarResponsavel(idProjeto, idPessoa)
 
-  if (funcaoEx7 === "Projeto nao encontrado") {
-      return "ID Inválido"
-  } else  if (!funcaoEx8) {
+  if (funcaoEx7 === "Projeto nao encontrado"){
+      return "Id não existe";
+  } else  if (funcaoEx8 === false) {
       return "Você não tem autorização para alterar este projeto!"
   }  else {
-      if (listaDeProjetos.statusDoProjeto === "Em andamento") {
-          return `Projeto ${listaDeProjetos.tituloProjeto} em andamento.`
+      if (listaDeProjetos[idProjeto - 1].statusDoProjeto === 'em andamento'){
+          listaDeProjetos[idProjeto - 1].statusDoProjeto = 'encerrado'
+          return `Projeto ${listaDeProjetos[idProjeto - 1].tituloDoProjeto} encerrado.`
       } else {
-          return "Esse projeto já foi encerrado anteriormente."
+          return "Projeto já encerrado"
       }
   }
 
 }
-
-console.log(Modificar(1, 123))
-console.log(Modificar(3, 123))
+console.log(modificar(1, 123))
+//console.log(listaDeProjetos[1])
 
 
 
