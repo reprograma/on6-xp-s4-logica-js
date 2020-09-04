@@ -1,6 +1,9 @@
-/// Exercicio 1
+console.log("Exercicio 1");
+
 const listaDeProjetos = [];
-// Exercício 2
+
+console.log("Exercicio 2");
+
 const projeto1 = {
   idProjeto: 1,
   tituloDoProjeto: 'Semana 04',
@@ -43,3 +46,20 @@ const projeto3 = {
   dataInicio: '15/03/2020',
   statusDoProjeto: 'em andamento',
 };
+
+console.log("Exercicio 3");
+
+function adicionaProjeto(projeto) {
+  return listaDeProjetos.push(projeto);
+}
+console.log(listaDeProjetos, 'Lista de projetos vazia');
+adicionaProjeto(projeto1); // adiciona o projeto1 a lista de projetos utilizando a função criada
+adicionaProjeto(projeto2); // adiciona o projeto2 a lista de projetos utilizando a função criada
+adicionaProjeto(projeto3); // adiciona o projeto2 a lista de projetos utilizando a função criada
+console.log(listaDeProjetos, 'Lista de projetos com os projetos adicionados');
+
+console.log ("Exercicio 4");
+
+function listarProjetos() {
+  return `Lista de projetos: ${JSON.stringify(listaDeProjetos)}`;
+}
