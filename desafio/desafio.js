@@ -149,7 +149,7 @@ function autorizaAlterar(projeto, pessoa, status) {
             if (!funcaoExercicio8) {
                 return "Você não tem autorização para alterar este projeto!."
             } else if (status === "Encerrado") {
-                return `O projeto ${listaDeProjetos[projeto -1].tituloProjeto} já foi encerrado e não pode ser editado!`
+                return `O projeto ${listaDeProjetos[projeto].tituloProjeto} já foi encerrado e não pode ser editado!`
             } else {
                 return "Permissão concedida"
              }
@@ -157,7 +157,7 @@ function autorizaAlterar(projeto, pessoa, status) {
 
 }
 
-// console.log(autorizaAlterar(1, 123, "Em andamento"))
+// console.log(autorizaAlterar(3, 096, "Em andamento"))
 
 
 //------Exercicio 10
@@ -171,6 +171,7 @@ function queroModificar(projeto, pessoa) {
     } else  if (!funcaoExercicio8) {
         return "Você não tem autorização para alterar este projeto!"
     }  else {
+
         if (listaDeProjetos[projeto -1].statusDoProjeto === "Em andamento") {
             listaDeProjetos[projeto -1].statusDoProjeto = "Encerrado" 
             return `Projeto ${listaDeProjetos[projeto -1].tituloProjeto} encerrado.`
@@ -181,7 +182,7 @@ function queroModificar(projeto, pessoa) {
         
 }
 
-// console.log(queroModificar(2, 444))
+// console.log(queroModificar(1, 123))
 
 
 // With love and tears, Nathália Santos (kkkkkkk)
