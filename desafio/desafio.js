@@ -66,3 +66,28 @@ function listarProjetos() {
 
 console.log(listarProjetos());
 
+console.log("Exercicio 5");
+
+function posicaoDoProjeto(posicao) {
+  if (listaDeProjetos[posicao] === undefined) {
+    return `Projeto não encontrado`;
+  } else {
+    return `O "${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}"`;
+  }
+}
+console.log(posicaoDoProjeto(0));
+console.log(posicaoDoProjeto(2));
+console.log(posicaoDoProjeto(999));
+
+console.log("Exercicio 6");
+
+function totalDeProjetos() {
+  let objetos = listaDeProjetos.length;
+  if (objetos > 1) {
+    return `Temos o total de ${objetos} projetos cadastrados`;
+  } else {
+    return `Temos o total de ${objetos} projeto cadastrado`;
+  }
+}
+console.log(totalDeProjetos());
+
