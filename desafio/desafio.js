@@ -1,8 +1,8 @@
-console.log("Exercicio 1");
+//Exercicio 1
 
 const listaDeProjetos = [];
 
-console.log("Exercicio 2");
+//Exercicio 2
 
 const projeto1 = {
   idProjeto: 1,
@@ -47,7 +47,7 @@ const projeto3 = {
   statusDoProjeto: 'em andamento',
 };
 
-console.log("Exercicio 3");
+//Exercicio 3
 
 function adicionaProjeto(projeto) {
   return listaDeProjetos.push(projeto);
@@ -58,7 +58,7 @@ adicionaProjeto(projeto2); // adiciona o projeto2 a lista de projetos utilizando
 adicionaProjeto(projeto3); // adiciona o projeto2 a lista de projetos utilizando a função criada
 console.log(listaDeProjetos, 'Lista de projetos com os projetos adicionados');
 
-console.log ("Exercicio 4");
+//Exercicio 4
 
 function listarProjetos() {
   return `Lista de projetos: ${JSON.stringify(listaDeProjetos)}`;
@@ -66,7 +66,7 @@ function listarProjetos() {
 
 console.log(listarProjetos());
 
-console.log("Exercicio 5");
+//Exercicio 5
 
 function posicaoDoProjeto(posicao) {
   if (listaDeProjetos[posicao] === undefined) {
@@ -79,7 +79,7 @@ console.log(posicaoDoProjeto(0));
 console.log(posicaoDoProjeto(2));
 console.log(posicaoDoProjeto(999));
 
-console.log("Exercicio 6");
+//Exercicio 6
 
 function totalDeProjetos() {
   let objetos = listaDeProjetos.length;
@@ -91,7 +91,7 @@ function totalDeProjetos() {
 }
 console.log(totalDeProjetos());
 
-console.log("Exercicio 7")
+//Exercicio 7
 function buscarProjeto(idProjeto) {
   let projetoEncontrado = listaDeProjetos.find(function (projeto) {
     return projeto.idProjeto === idProjeto;
@@ -105,7 +105,7 @@ function buscarProjeto(idProjeto) {
 console.log(buscarProjeto(3))
 console.log(buscarProjeto(999))
 
-console.log("Exercicio 8")
+//Exercicio 8
 
 function mostrarResponsavel(idProjeto, idPessoa) {
   let projeto = buscarProjeto(idProjeto);
@@ -123,7 +123,7 @@ function mostrarResponsavel(idProjeto, idPessoa) {
 console.log(mostrarResponsavel(2, 589)); 
 console.log(mostrarResponsavel(2, 111));
 
-console.log("Exercicio 9");
+//Exercicio 9
 
 
 function autorizarAlteracao(idProjeto, idPessoa, statusDoProjeto) {
@@ -144,7 +144,7 @@ function autorizarAlteracao(idProjeto, idPessoa, statusDoProjeto) {
 
 console.log(autorizarAlteracao(1, 123, 0))
 
-console.log("Exercicio 10")
+//Exercicio 10
 
 function modificando(idProjeto, idPessoa) {
 
