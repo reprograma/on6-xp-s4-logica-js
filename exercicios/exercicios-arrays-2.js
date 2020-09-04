@@ -1,4 +1,3 @@
-
 /*
 Declare uma variável chamada `hortifruti`, que receberá um array com 5 elementos.
 Os elementos serão itens de hortifruti
