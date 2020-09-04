@@ -168,3 +168,6 @@ function modificando(idProjeto, idPessoa) {
 console.log(modificando(3, 132));
 console.log(listaDeProjetos);
 
+/* O exercicio 10 foi um dos mais complicados e apresenta alguns bugs que não 
+consegui solucionar nem mesmo durante a monitoria. Entretanto, tivemos excelentes
+dicas sobre a resolução do 8 e 9 */
