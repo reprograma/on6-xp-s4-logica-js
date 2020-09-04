@@ -98,27 +98,29 @@ console.log("--------------------------------------------------------------")
 
 //7
 
-function buscarProjeto(idProjeto){
-    // atribui a variavel projetoEncontrado e retorno do filtro
-// projeto é cada posição do array que o filyto vai acessar para buscar nossa condição
-//return é o resultado da nossa condição
-// também poderiamos usar o método find
-    let projetoEncontrado = listaDeProjetos.filter(function(projeto){
-        return projeto.idProjeto === idProjeto
-    })
-
-    if(projetoEncontrado !== undefined){
-        return projetoEncontrado
-    }else{
-        `Projeto não encontrado`
+function buscarProjeto(idProjeto) {
+    // atribui a variavel projetoEncontrado o retorno do filtro
+    // projeto é cada posição do array que o filtro vai acessar para buscar nossa condição
+    // return é o resultado da nossa condição
+  
+    // também poderíamos usar o método find
+  
+    // let projetoEncontrado = listaDeProjetos.filter(function (projeto) {
+    //   return projeto.idProjeto === idProjeto;
+    // });
+  
+    let projetoEncontrado = listaDeProjetos.find(function (projeto) {
+      return projeto.idProjeto === idProjeto;
+    });
+  
+    if (projetoEncontrado !== undefined) {
+      return projetoEncontrado;
+    } else {
+      return `Projeto não encontrado`;
     }
-   
-}
-//console.log(buscarProjeto(3))
-console.log(buscarProjeto(999))
+  }
+  
+  console.log(buscarProjeto(6)); // retorna projeto3
 
 console.log("--------------------------------------------------------------")
 
-//8
-
-function mostrarResponsavel()
