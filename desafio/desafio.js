@@ -91,3 +91,36 @@ function totalDeProjetos() {
 }
 console.log(totalDeProjetos());
 
+console.log("Exercicio 7")
+function buscarProjeto(idProjeto) {
+  let projetoEncontrado = listaDeProjetos.find(function (projeto) {
+    return projeto.idProjeto === idProjeto;
+  });
+  if (projetoEncontrado !== undefined) {
+    return projetoEncontrado;
+  } else {
+    return `Projeto não encontrado`;
+  }
+}
+console.log(buscarProjeto(3))
+console.log(buscarProjeto(999))
+
+console.log("Exercicio 8")
+
+function mostrarResponsavel(idProjeto, idPessoa) {
+  let projeto = buscarProjeto(idProjeto);
+  let responsavel = projeto.pessoasResponsaveis.find(function (responsavel) { //filter
+    return responsavel.idPessoa === idPessoa;
+  });
+  if (responsavel !== undefined) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
+
+console.log(mostrarResponsavel(2, 589)); 
+console.log(mostrarResponsavel(2, 111));
+
+
