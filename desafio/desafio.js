@@ -63,3 +63,6 @@ console.log ("Exercicio 4");
 function listarProjetos() {
   return `Lista de projetos: ${JSON.stringify(listaDeProjetos)}`;
 }
+
+console.log(listarProjetos());
+
