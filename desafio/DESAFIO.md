@@ -53,7 +53,7 @@ A partir dessas informações, execute as tarefas a seguir:
 8. Crie uma função com as seguintes características:
 
    - A função deve receber três parâmetros: id do projeto, id da pessoa que quer editar o projeto, novo _status_
-   - Se o id do projeto existir, então verique se o id da pessoa passado por parâmetro existe na lista de pessoas responsáveis. Se existir, então verifique se o _status_ é diferente de "encerrado" para permitir.
+   - Se o id do projeto existir, então verique se o id da pessoa passado por parâmetro existe na lista de pessoas responsáveis. Se existir, então verifique se o _status_ é diferente de "encerrado" para permitir edição.
    - Se o id do projeto NÃO existir, retorne a mensagem "Projeto não encontrado!"
    - Se o id da pessoa NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem "Você não tem autorização para editar este projeto!".
    - Se o _status_ do projeto for "encerrado", então retorne a seguinte mensagem "Esse projeto já foi encerrado e não pode ser editado!".
