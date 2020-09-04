@@ -123,4 +123,48 @@ function mostrarResponsavel(idProjeto, idPessoa) {
 console.log(mostrarResponsavel(2, 589)); 
 console.log(mostrarResponsavel(2, 111));
 
+console.log("Exercicio 9");
+
+
+function autorizarAlteracao(idProjeto, idPessoa, statusDoProjeto) {
+
+  let funcaoExercicio7 = buscarProjeto(idProjeto)
+  let funcaoExercicio8 = mostrarResponsavel(idProjeto, idPessoa)
+
+  if (funcaoExercicio7 === 'Projeto não encontrado') {
+    return 'ID não existe';
+  } else if (funcaoExercicio8 === false) {
+    return 'Você não tem autorização para alterar este projeto!';
+  } else if (statusDoProjeto === "Encerrado") {
+    return `O projeto ${listaDeProjetos[projeto].tituloDoProjeto} já foi encerrado e não pode ser editado!`
+  } else {
+    return 'Permissão concedida';
+  }
+}
+
+console.log(autorizarAlteracao(1, 123, 0))
+
+console.log("Exercicio 10")
+
+function modificando(idProjeto, idPessoa) {
+
+  let funcaoExercicio7 = buscarProjeto(idProjeto)
+  let funcaoExercicio8 = mostrarResponsavel(idProjeto, idPessoa)
+
+  if (funcaoExercicio7 === 'Projeto não encontrado') {
+    return 'ID não existe';
+  } else if (funcaoExercicio8 === false) {
+    return 'Você não tem autorização para alterar este projeto';
+  } else {
+    if (listaDeProjetos[idProjeto - 1].statusDoProjeto === 'em andamento') {
+      listaDeProjetos[idProjeto - 1].statusDoProjeto = 'Encerrado'
+      return `Projeto ${listaDeProjetos[idProjeto - 1].tituloDoProjeto} encerrado`
+    } else {
+      return 'Projeto já encerrado'
+    }
+  }
+}
+
+console.log(modificando(3, 132));
+console.log(listaDeProjetos);
 
