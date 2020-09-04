@@ -8,31 +8,40 @@ const projeto1 = {
     idProjeto: 1,
     tituloDoProjeto: 'Reprograma',
     descricaoDoProjeto: 'Reprogramando a forma como mulheres se percebem como contribuidoras no setor de tecnologia.',
-    pessoasResponsaveis: [{idPessoa: 123, nome: 'Yasminn', setor: 'tecnologia'}, {idPessoa: 124, nome: 'Larissa', setor: 'tecnologia'}],
-    pessoasColaboradoras: [{idPessoa: 125, nome: 'Andreza', setor: 'tecnologia'}],
+    pessoasResponsaveis: 
+        [{idPessoa: 123, nome: 'Yasminn', setor: 'tecnologia'}, 
+        {idPessoa: 124, nome: 'Larissa', setor: 'tecnologia'}],
+    pessoasColaboradoras: 
+        [{idPessoa: 125, nome: 'Andreza', setor: 'tecnologia'}],
     dataInicio: '29/08/2016',
     statusDoProjeto: 'em andamento'
-}
+};
 
 const projeto2 = {
     idProjeto: 2,
     tituloDoProjeto: 'WoMakersCode',
     descricaoDoProjeto: 'Somos uma comunidade que fortalece a representatividade feminina na tecnologia, através de orientação de carreira e técnica para fomentar a empregabilidade na indústria.',
-    pessoasResponsaveis: [{idPessoa: 126, nome: 'Cynthia', setor: 'tecnologia'}, {idPessoa: 127, nome: 'Camila', setor: 'tecnologia'}],
-    pessoasColaboradoras: [{idPessoa: 128, nome: 'Andrea', setor: 'tecnologia'}],
+    pessoasResponsaveis: 
+        [{idPessoa: 126, nome: 'Cynthia', setor: 'tecnologia'}, 
+        {idPessoa: 127, nome: 'Camila', setor: 'tecnologia'}],
+    pessoasColaboradoras: 
+        [{idPessoa: 128, nome: 'Andrea', setor: 'tecnologia'}],
     dataInicio: '01/02/2015',
     statusDoProjeto: 'em andamento'
-}
+};
 
 const projeto3 = {
     idProjeto: 3,
-    tituloDoProjeto: 'Leciono Inglês',
-    descricaoDoProjeto: 'Um projeto de aulas particulares de inglês.',
-    pessoasResponsaveis: [{idPessoa: 129, nome: 'Cláudia', setor: 'tecnologia'}, {idPessoa: 130, nome: 'Luiza', setor: 'tecnologia'}],
-    pessoasColaboradoras: [{idPessoa: 131, nome: 'Maria', setor: 'tecnologia'}],
+    tituloDoProjeto: 'PyLadies',
+    descricaoDoProjeto: 'Um projeto Python.',
+    pessoasResponsaveis: 
+        [{idPessoa: 129, nome: 'Cláudia', setor: 'tecnologia'}, 
+        {idPessoa: 130, nome: 'Luiza', setor: 'tecnologia'}],
+    pessoasColaboradoras: 
+        [{idPessoa: 131, nome: 'Maria', setor: 'tecnologia'}],
     dataInicio: '15/01/2017',
     statusDoProjeto: 'encerrado'
-}
+};
 
 // Exercício 3
 
@@ -40,46 +49,49 @@ function adicionaProjeto(projeto){
     return listaDeProjetos.push(projeto)
 }
 
-adicionaProjeto(projeto1) // adiciona o projeto1 a lista de projetos utilizando a função criada
-adicionaProjeto(projeto2)
-adicionaProjeto(projeto3)
+adicionaProjeto(projeto1); // adiciona o projeto1 a lista de projetos utilizando a função criada
+adicionaProjeto(projeto2); // adiciona o projeto2 a lista de projetos utilizando a função criada
+adicionaProjeto(projeto3); // adiciona o projeto3 a lista de projetos utilizando a função criada
 
 // Exercício 4
 
 function listarProjetos(){
     return `Lista de projetos: \n ${JSON.stringify(listaDeProjetos)}`
-}
+};
 
-//console.log(listarProjetos())
+console.log(listarProjetos()); // imprime a lista de projetos como string no console
+console.log('----------------------------------------------')
 
 // Exercício 5
 
 function posicaoProjeto (posicao) {
     if(listaDeProjetos[posicao] === undefined){
-        return "Projeto não encontrado."
+        return 'Projeto não encontrado.';
     } else {
-        return `O "${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}".`
+        return `O "${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}".`;
     }
-}
+};
 
-console.log(posicaoProjeto(2))
-console.log(posicaoProjeto(999))
+console.log(posicaoProjeto(2)); // imprime 'O "PyLadies" está na posição 2 e seu status é "encerrado".'
+console.log(posicaoProjeto(999)); // imprime 'Projeto não encontrado'
+console.log('----------------------------------------------')
 
 // Exercício 6
 
 function totalProjetos() {
-    let objetos = listaDeProjetos.length
-    let plural = "projetos cadastrados"
-    let singular = "projeto cadastrado"
+    let objetos = listaDeProjetos.length;
+    let plural = 'projetos cadastrados';
+    let singular = 'projeto cadastrado';
 
     if(objetos > 1){
-    return `Temos ${objetos} ${plural}.`
+    return `Temos ${objetos} ${plural}.`;
     } else {
-        return `Temos ${objetos} ${singular}`
+        return `Temos ${objetos} ${singular}`;
     }
-}
+};
 
-console.log(totalProjetos())
+console.log(totalProjetos()); // imprime 'Temos 3 projetos cadastrados'
+console.log('----------------------------------------------')
 
 // Exercicio 7
 
@@ -88,10 +100,10 @@ function buscarProjeto(idProjeto) {
     // projeto é cada posição do array que o filtro vai acessar para buscar nossa condição
     // return é o resultado da nossa condição
   
-  
-    // let projetoEncontrado = listaDeProjetos.filter(function (projeto) {
-    //   return projeto.idProjeto === idProjeto;
-    // });
+    /* exemplo feito com filter ao invés de find:
+     let projetoEncontrado = listaDeProjetos.filter(function (projeto) {
+      return projeto.idProjeto === idProjeto;
+     }); */
   
     let projetoEncontrado = listaDeProjetos.find(function (projeto) {
       return projeto.idProjeto === idProjeto;
@@ -104,8 +116,9 @@ function buscarProjeto(idProjeto) {
     }
   }
   
-  console.log(buscarProjeto(3)); // retorna projeto3
-  console.log(buscarProjeto(999)); // retorna a mensagem Projeto não encontrado
+  console.log(buscarProjeto(3)); // imprime projeto3
+  console.log(buscarProjeto(999)); // imprime a mensagem Projeto não encontrado
+  console.log('----------------------------------------------')
   
   // Exercicio 8
   
@@ -121,19 +134,20 @@ function buscarProjeto(idProjeto) {
             return true
         } else {
             return false
-        }
-    }
+        };
+    };
 
-  }
+  };
   
-  console.log(mostrarResponsavel(2, 126))
-  console.log(mostrarResponsavel(2, 999))
+  console.log(mostrarResponsavel(2, 126)); //imprime true
+  console.log(mostrarResponsavel(2, 999)); //imprime false
+  console.log('----------------------------------------------')
   
   // Exercício 9
 
 function modificarProjeto(projeto, pessoa, status) {
-    let ex7 = buscarProjeto(projeto)
-    let ex8 = mostrarResponsavel(projeto, pessoa)
+    let ex7 = buscarProjeto(projeto);
+    let ex8 = mostrarResponsavel(projeto, pessoa);
 
     if (ex7 === `Projeto não encontrado`){
         return "ID Inválido"
@@ -145,18 +159,20 @@ function modificarProjeto(projeto, pessoa, status) {
             return `O projeto ${listaDeProjetos[projeto -1].tituloDoProjeto} já foi encerrado e não pode ser editado.`
         } else {
             return "Você tem permissão para modificar o projeto :)"
-        }
-    }
-}
+        };
+    };
+};
 
-console.log(modificarProjeto(3, 130, 'encerrado')) 
+console.log(modificarProjeto(3, 130, 'encerrado')); //imprime 'O projeto PyLadies já foi encerrado e não pode ser editado.'
+console.log(modificarProjeto(3, 999, 0)); //imprime 'você não tem autorização para alterar esse projeto.'
+console.log('----------------------------------------------')
 
 //Exercício 10
 
 function queroModificar(projeto, pessoa) {
 
-    let ex7 = buscarProjeto(projeto)
-    let ex8 = mostrarResponsavel(projeto, pessoa)
+    let ex7 = buscarProjeto(projeto);
+    let ex8 = mostrarResponsavel(projeto, pessoa);
 
     if (ex7 === "Projeto não encontrado") {
         return "ID Inválido"
@@ -169,9 +185,10 @@ function queroModificar(projeto, pessoa) {
             return `Projeto ${listaDeProjetos[projeto-1].tituloDoProjeto} foi encerrado.`
         } else {
             return "Esse projeto já foi encerrado anteriormente."
-        }
-    }      
-}
+        };
+    };    
+};
 
-console.log(queroModificar(5, 123)) //ID inválido
-console.log(queroModificar(1, 123)) // Projeto Reprograma foi encerrado.
+console.log(queroModificar(5, 123)); //imprime 'ID inválido'
+console.log(queroModificar(1, 123)); // imprime 'Projeto Reprograma foi encerrado.'
+console.log('-------------------FIM------------------------')
