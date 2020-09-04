@@ -1,11 +1,11 @@
 /**
-* Crie uma constante que irá receber a lista de projetos.
+* 1 - Crie uma constante que irá receber a lista de projetos.
 */
 
  const listaDeProjetos = [];
 
 /**
-* Crie 3 objetos diferentes que irão receber as informações do projeto.
+* 2 - Crie 3 objetos diferentes que irão receber as informações do projeto.
 */
 
   const projeto1 = {
@@ -42,7 +42,7 @@
   };
 
 /**
-* Crie uma função que adiciona os objetos criados à lista de projetos.
+* 3 - Crie uma função que adiciona os objetos criados à lista de projetos.
 */
 
   function adicionaProjeto(projeto){
@@ -53,69 +53,45 @@
   adicionaProjeto(projeto2);
   adicionaProjeto(projeto3);
 
-  //Testes para garantir o funcionamento.
-  /*  console.log('--- Lista de projetos ---');
-    console.log(listaDeProjetos);
-  
-    adicionaProjeto(projeto1) // adiciona o projeto1 a lista de projetos utilizando a função criada
-  
-    console.log('--- Lista de projetos ---');
-    console.log(listaDeProjetos);*/
-
 /**
- * Crie uma função que retorne a lista de projetos cadastrados com a seguinte frase "Lista de projetos: [PROJETOS]."
+ * 4 - Crie uma função que retorne a lista de projetos cadastrados com a seguinte frase "Lista de projetos: [PROJETOS]."
 */
 
   function projetosCadastrados(listaDeProjetos){
     
     console.log("Lista de projetos: ");
-    for(contador = 0; contador <= listaDeProjetos.length; contador ++){
+    for(contador = 0; contador < listaDeProjetos.length; contador ++){
       console.log(listaDeProjetos[contador]); 
     } 
 
-    return " ";
   }
 
   projetosCadastrados(listaDeProjetos);
   console.log("-------------");
 
-  /**4 Resolução da professora:
-   *  function listarProjetos(){
-   *    return `Lista de projetos: ${JSON.stringify(listaDeProjetos)}`;
-   * }
-   */
-
 /**
- * Crie uma função com as seguintes características:
+ * 5 - Crie uma função com as seguintes características:
  *  - A função deve receber um número por parâmetro;
  *  - A função deve retornar a frase 'O [PROJETO] na posição [POSIÇÂO] está com o status [PROJETO.STATUS].'
  *  - Se o projeto não existir na posição, retorne a seguinte frase: "Projeto não encontrado."
 */
    
- function buscaProjeto(numero){
-  if(numero <= listaDeProjetos.length){
-    return `O projeto ${listaDeProjetos[numero].tituloDoProjeto}, na posição ${numero} está com o status ${listaDeProjetos[numero].statusDoProjeto}.`;
-  }else{
+ function buscaPorProjeto(posicao){
+  if(listaDeProjetos[posicao] === undefined){
     return "Projeto não encontrado";
+  }else{
+    return `O projeto: ${listaDeProjetos[posicao].tituloDoProjeto}, na posição ${posicao + 1} está com o status ${listaDeProjetos[posicao].statusDoProjeto}.`;
   }
  }
 
- console.log(buscaProjeto(1)); //rever isso aqui, e ver o porque não esta imprimindo o retorno.
+ console.log(buscaPorProjeto(0));
+ console.log(buscaPorProjeto(1));
+ console.log(buscaPorProjeto(2));
  console.log("-------------");
 
- /**
-  * 5 Resolução da professora:
-  * function posicaoDoProjeto(p){
-  *   if(listaDeProjetos[p] === undefined){
-  *     return "Projeto não encontrado";
-  *   }else{
-  *     return `O ${listaDeProjetos[p].tituloDoProjeto} esta na posicao ${p} e seu status é ${listaDeProjetos[p].statusDoProjeto}`;
-  *   }
-  * }
-  */
 
 /**
- * Crie uma função que retorne o total de projetos cadastrados com a seguinte frase "Temos [TOTAL] projetos cadastrados". 
+ * 6 - Crie uma função que retorne o total de projetos cadastrados com a seguinte frase "Temos [TOTAL] projetos cadastrados". 
  * Extra: tente fazer a frase no singular e no plural. 
 */
 
@@ -135,7 +111,7 @@
 
 
 /**
- * Crie uma função com as seguintes características:
+ * 7 - Crie uma função com as seguintes características:
  * - A função deve receber o parâmetro id do projeto
  * - Se o id do projeto existir, retorne o projeto encontrado
  * - Se o id do projeto NÃO existir, retorne a mensagem "Projeto não encontrado!"
@@ -143,9 +119,6 @@
 */
 
  function buscaProjeto(id){
-   //atribui à variavel projeto encontrado o retorno do filtro
-   //projeto é cada posição do array que o filtro vai acessar para buscar nossa condição
-   //return é o resultado da nossa condição
 
    //tambem poderiamos usar o método filter
   let projetoEncontrado = listaDeProjetos.find(function (projeto){
@@ -160,7 +133,7 @@
  }
 
  console.log(buscaProjeto(3));
- //console.log(buscaProjeto(9)); //esse id nao existe, ele retorna a frase do else.
+ console.log(buscaProjeto(9)); //esse id nao existe, ele retorna a frase do else.
  console.log("-------------");
 
 
@@ -192,34 +165,35 @@
  console.log("-------------");
 
 /**
- * 9-  Crie uma função com as seguintes características:
+ * 9 - Crie uma função com as seguintes características:
  *
  *  - A função deve receber três parâmetros: idProjeto, idPessoa da pessoa que deseja modificar o projeto, statusDoProjeto
  * - Se o idProjeto existir, então verique se o idPessoa passado por parâmetro existe na lista de pessoas responsáveis. 
  *  Se existir, então verifique se o _status_ é diferente de "encerrado" para permitir edição.
  *    > Dica: use as funções criadas nos exercícios 7 e 8 para facilitar a validação dessa condição
- *  - Se o idPessoa NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem "Você não tem autorização para alterar este projeto!".
- *  - Se o _status_ do projeto for "encerrado", então retorne a seguinte mensagem "O projeto [NOME DO PROJETO] já foi encerrado e não pode ser editado!".
+ *  - Se o idPessoa NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem 
+ *  "Você não tem autorização para alterar este projeto!".
+ *  - Se o _status_ do projeto for "encerrado", então retorne a seguinte mensagem 
+ *  "O projeto [NOME DO PROJETO] já foi encerrado e não pode ser editado!".
 */
 
  function editaProjeto(idProjeto, idPessoa, statusDoProjeto){
   let pessoasResponsavel = mostrarResponsavel(idProjeto, idPessoa);
-  let tituloProjeto = listaDeProjetos[parseInt(idProjeto)].tituloDoProjeto;
+  let tituloProjeto = listaDeProjetos[parseInt(idProjeto - 1)].tituloDoProjeto;
   
   if(pessoasResponsavel === false){
-    return "Você não tem autorização para alterar o projeto " + tituloProjeto + "." ;
+    return `Você não tem autorização para alterar o projeto ${tituloProjeto}.`;
   }else if(statusDoProjeto === "encerrado"){
-    return "O projeto " + tituloProjeto + " já foi encerrado e não pode ser editado!";
+    return `O projeto ${tituloProjeto} já foi encerrado e não pode ser editado!`;
   }else{
-    return "Você tem autorização para alterar o projeto " + tituloProjeto + " .";
+    return `Você tem autorização para alterar o projeto: ${tituloProjeto}!`;
   }
  }
 
- editaProjeto(1, 123, "em andamento"); //true
- editaProjeto(3, 121, "encerrado"); //true
- editaProjeto(3, 988, "encerrado"); //false
-
- //${listaDeProjetos[numero].tituloDoProjeto}
+ console.log(editaProjeto(1, 123, "em andamento")); 
+ console.log(editaProjeto(3, 121, "encerrado")); 
+ console.log(editaProjeto(3, 988, "encerrado")); 
+ console.log("-------------");
 
 
 /**
@@ -227,7 +201,37 @@
  *
  *  - A função deve receber dois parâmetros: idProjeto, idPessoa da pessoa que deseja modificar o projeto
  *   - Se o idProjeto existir, então verique se o idPessoa passado por parâmetro existe na lista de pessoas responsáveis. 
- *    Se existir, verifique se o status do projeto é 'em andamento' e altere para 'encerrado, retornando a mensagem 'Projeto [NOME DO PROJETO] encerrado'
+ *    Se existir, verifique se o status do projeto é 'em andamento' e altere para 'encerrado, retornando a mensagem 
+ *  'Projeto [NOME DO PROJETO] encerrado'
  *     > Dica: use as funções criadas nos exercícios 7 e 8 para facilitar a validação dessa condição
- *   - Se o nome passado por parâmetro NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem "Você não tem autorização para alterar este projeto!".
+ *   - Se o nome passado por parâmetro NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem 
+ *  "Você não tem autorização para alterar este projeto!".
 */
+
+function alteraStatusProjeto(idProjeto, idPessoa){
+
+  let buscarProjeto = buscaProjeto(idProjeto); 
+  let pessoasResponsavel = mostrarResponsavel(idProjeto, idPessoa);
+
+  if(buscarProjeto === "Projeto não encontrado"){
+    return "ID inválido";
+  }else if(!pessoasResponsavel){
+    return "Você não tem autorização para alterar este projeto!";
+  }else{
+    if (listaDeProjetos[idProjeto -1].statusDoProjeto === "em andamento") {
+      listaDeProjetos[idProjeto -1].statusDoProjeto = "encerrado" 
+      return `O projeto: ${listaDeProjetos[idProjeto -1].tituloDoProjeto} está encerrado.`
+  } else {
+      return "Esse projeto já foi encerrado anteriormente."
+  }
+  }
+}
+
+ console.log(alteraStatusProjeto(1, 123)); 
+ console.log(alteraStatusProjeto(3, 121)); 
+ console.log(alteraStatusProjeto(3, 988)); 
+ console.log("-------------");
+
+
+
+
