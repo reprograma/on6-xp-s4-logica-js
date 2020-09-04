@@ -150,13 +150,18 @@ console.log(buscarProjeto(999)); // retorna a mensagem
 
 function mostrarResponsavel(idProjeto, idPessoa) {
     let projeto = buscarProjeto(idProjeto);
-    let responsavel = projeto.pessoasResponsaveis.filter(function (responsavel) {
+    let responsavel = projeto.pessoasResponsaveis.find(function (responsavel) {
         return responsavel.idPessoa === idPessoa;
     });
+    if(responsavel !== undefined){
+        return true;
+    } else{
+        return false;
+    }
 
-    return responsavel;
 } 
 console.log(mostrarResponsavel(2, 589));
+console.log(mostrarResponsavel(2, 111));
 
 //Exercicio 9
 
@@ -175,7 +180,7 @@ function autorizarAlteracao (idProjeto, idPessoa, statusDoProjeto){
 
     if(funcaoexercicio7 === "Projeto não encontrado"){
         return 'ID não existe';
-    }else if(funcaoexercicio8){
+    }else if(funcaoexercicio8 === false){
         return 'Voce nao tem autorizacao para alterar este projeto!';
     } else if(statusDoProjeto === 'Encerrado'){
         return `O projeto ${listaDeProjetos[projeto].tituloDoProjeto} já foi encerrado e não pode ser editado`
@@ -192,3 +197,25 @@ console.log(autorizarAlteracao(1, 123, 'em andamento'))
 //Se o idProjeto existir, então verique se o idPessoa passado por parâmetro existe na lista de pessoas responsáveis. Se existir, verifique se o status do projeto é 'em andamento' e altere para 'encerrado, retornando a mensagem 'Projeto [NOME DO PROJETO] encerrado'
 //Dica: use as funções criadas nos exercícios 7 e 8 para facilitar a validação dessa condição
 //Se o nome passado por parâmetro NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem "Você não tem autorização para alterar este projeto!".
+
+function modificando (idProjeto, idPessoa){
+   
+    let funcaoexercicio7 = buscarProjeto(idProjeto)
+    let funcaoexercicio8 = mostrarResponsavel(idProjeto , idPessoa)
+
+    if(funcaoexercicio7 === "Projeto não encontrado"){
+        return 'ID não existe';
+    }else if (funcaoexercicio8 === false){
+        return 'Voce nao tem autorizacao para alterar este projeto!';
+    }else{
+        if(listaDeProjetos[idProjeto-1].statusDoProjeto === 'em andamento'){
+            listaDeProjetos[idProjeto-1].statusDoProjeto = 'Encerrado'
+            return `Projeto ${listaDeProjetos[idProjeto-1].tituloDoProjeto} em andamento`
+        } else{
+            return 'Projeto encerrado'
+        }
+    }
+}
+
+console.log(modificando(2,123))
+console.log(listaDeProjetos)
