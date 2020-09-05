@@ -123,10 +123,7 @@ function buscarProjeto(idDoProjeto) {
   let projetoEncontrado = listaDeProjetos.find(function (projeto) {
     return projeto.idDoProjeto === idDoProjeto;
   });
-  if (
-    projetoEncontrado !== undefined &&
-    projetoEncontrado !== null
-  ) {
+  if (projetoEncontrado !== undefined && projetoEncontrado !== null) {
     return projetoEncontrado;
   } else {
     return `Projeto não encontrado`;
@@ -137,17 +134,14 @@ console.log(buscarProjeto(2));
 
 //8
 function mostrarResponsavel(idDoProjeto, idPessoa) {
-  console.log(idDoProjeto, idPessoa)
+  console.log(idDoProjeto, idPessoa);
   let projeto = buscarProjeto(idDoProjeto);
-  console.log(projeto)
-  console.log(projeto.pessoasResponsaveis)
+  console.log(projeto);
+  console.log(projeto.pessoasResponsaveis);
   let responsavel = projeto.pessoasResponsaveis.find(function (responsavel) {
     return responsavel.idPessoa === idPessoa;
   });
-  if (
-    responsavel !== undefined &&
-    responsavel!== null
-  ) {
+  if (responsavel !== undefined && responsavel !== null) {
     return responsavel;
   } else {
     return `Responsável não encontrado`;
@@ -155,7 +149,6 @@ function mostrarResponsavel(idDoProjeto, idPessoa) {
 }
 
 console.log(mostrarResponsavel(1010, "Gerente1"));
-
 
 function existeProjeto(projeto, pessoa) {
   let funcaoExercicio7 = acharId(projeto);
@@ -192,4 +185,21 @@ function autorizarAlteracao(idDoProjeto, idPessoa, statusDoProjeto) {
   }
 }
 
-autorizarAlteracao(1010, "Colab1", "Em andamento")
+autorizarAlteracao(1010, "Colab1", "Em andamento");
+
+//10
+
+function encerrarProjeto(idDoProjeto, idPessoa) {
+  let responsavel = mostrarResponsavel(idDoProjeto, idPessoa);
+  if (responsavel === undefined || responsavel == null)
+    return `Você não tem autorização para alterar este projeto!`;
+
+    let projeto = buscarProjeto (idDoProjeto)
+  projeto.statusDoProjeto = "encerrado";
+  return `Projeto ${
+    projeto.tituloDoProjeto
+  } encerrado.`;
+};
+
+console.log(encerrarProjeto(1010, "gerente1"));
+
