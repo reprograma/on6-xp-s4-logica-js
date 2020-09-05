@@ -14,7 +14,7 @@ Você é a nova pessoa desenvolvedora na Agência Estrela e é a responsável po
 
 - Informações do Projeto:
 
-  - Id do projeto
+  - Id do projeto 
   - Título do projeto
   - Descrição do projeto
   - Pessoas responsáveis, contendo id da pessoa, nome da pessoa e setor
