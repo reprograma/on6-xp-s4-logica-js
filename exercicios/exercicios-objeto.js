@@ -6,8 +6,8 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `idade` - Number
 - `altura` - Number
 - `peso` - Number
-- `andando` - Boolean - recebe "falso" por padrão
-- `caminhouQuantosMetros` - Number - recebe "zero" por padrão
+- `andando` - Boolean - iniciado com "false"
+- `caminhouQuantosMetros` - Number - iniciado com zero
 */
 
 const pessoa = {
@@ -22,7 +22,7 @@ const pessoa = {
 
 
 /*
-Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
+Adicione uma função ao objeto `pessoa` chamado `fazerAniversario`. A função deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
@@ -180,15 +180,22 @@ console.log(`andou ${pessoa.caminhouQuantosMetros}`)
 
 
 /*
-Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
-inline ao lado da instrução para mostrar a resposta retornada)
+Crie um método chamado `mostrarDistancia` que retorne a frase:
+- "[NOME] caminhou [caminhouQuantosMetros]m"
 */
 
+pessoa.mostrarDistancia = function () {
+  return `${pessoa.nome} caminhou ${pessoa.caminhouQuantosMetros}m`;
+};
+
+console.log(pessoa.mostrarDistancia()); // chama a função que mostra a distância
+
+console.log(`caminhou ${pessoa.caminhouQuantosMetros}`); // mostra a distância
 
 /*
 Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
 retornar a string:
-- "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
+- "Olá, eu sou [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
 
 Só que, antes de retornar a string, você vai fazer algumas validações:
 - Se a idade for `1`, a frase acima, na parte que fala da idade, vai mostrar a

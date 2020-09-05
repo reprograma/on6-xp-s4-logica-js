@@ -1,5 +1,6 @@
 /*
-1. Crie um array contendo 5 itens de tipos variados de dados (número, texto, objeto, boleano) 
+1. Crie um array contendo 4 itens de tipos variados de dados 
+(número, texto, objeto, boleano) 
 */
 
 const itens = [2, 'reprograma', true, { curso: 'backend', data: '29/08/2020' }]
@@ -60,6 +61,7 @@ while (numero <= 20) {
 /*
 Na mesma ideia do exercício acima: mostre agora os números ímpares.
 */
+
 console.log('Números ímpares entre 10 e 20:');
 
 let numero1 = 10
