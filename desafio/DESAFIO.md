@@ -1,66 +1,207 @@
-<h1 align="center">
-  <br>
-  <img src="../assets/developer.png" alt="Front-End Checklist" width="250">
-  <br>
-    <br>
-        Desafio - Semana 04
-  <br>
-  <br>
-</h1>
+/* Exercicio 1 */
 
-## Descrição
+const listaDeProjetos = [];
 
-Você é a nova pessoa desenvolvedora na Agência Estrela e é a responsável por criar um programa de gerenciamento de projetos. Para isso, você recebeu uma lista com as informações para cadastrar um projeto e a lista de requisitos que o sistema deve ter:
+// Exercício 2
 
-- Informações do Projeto:
+const projeto1 = {
+  idProjeto: 1,
+  tituloDoProjeto: 'Semana 04',
+  descricaoDoProjeto: 'exercicio da semana',
+  pessoasResponsaveis: [
+    { idPessoa: 2424, nome: 'Thaissa', setor: 'tecnologia' },
+    { idPessoa: 1212, nome: 'Felipe', setor: 'tecnologia' },
+  ],
+  pessoasColaboradoras: [
+    { idPessoa: 3636, nome: 'Ester', setor: 'tecnologia' },
+  ],
+  dataInicio: '29/08/2020',
+  statusDoProjeto: 'em andamento',
+};
 
-  - Id do projeto
-  - Título do projeto
-  - Descrição do projeto
-  - Pessoas responsáveis, contendo id da pessoa, nome da pessoa e setor
-  - Pessoas colaboradoras, contendo id da pessoa, nome da pessoa e setor
-  - Data de Início
-  - _Status_ do Projeto (em andamento ou encerrado)
+const projeto2 = {
+  idProjeto: 2,
+  tituloDoProjeto: 'Vacina do Covid',
+  descricaoDoProjeto: 'estudo para criação da vacina contra o Corona Virus',
+  pessoasResponsaveis: [{ idPessoa: 965, nome: 'Rita', setor: 'Saude' }],
+  pessoasColaboradoras: [
+    { idPessoa: 345, nome: 'Angelina', setor: 'marketing' },
+    { idPessoa: 765, nome: 'Fernando', setor: 'pesquisa' },
+    { idPessoa: 132, nome: 'Mateus', setor: 'tecnologia' },
+  ],
+  dataInicio: '23/03/2020',
+  statusDoProjeto: 'em andamento',
+};
 
-- Lista de Requisitos:
-  - Qualquer pessoa pode criar um novo projeto.
-  - Somente a pessoa responsável pelo projeto pode editar suas informações.
-  - Somente a pessoa responsável pelo projeto pode excluí-lo.
-  - Projetos com _status_ "encerrado" não podem sofrer alteração.
+const projeto3 = {
+  idProjeto: 3,
+  tituloDoProjeto: 'Seleção de alunas para turma ON6',
+  descricaoDoProjeto:
+    'projeto para o processo seletivo de novas alunas do Reprograma',
+  pessoasResponsaveis: [
+    { idPessoa: 765, nome: 'Ceci', setor: 'pessoas' },
+    { idPessoa: 132, nome: 'Yasminn', setor: 'tecnologia' },
+  ],
+  pessoasColaboradoras: [
+    { idPessoa: 893, nome: 'Barbara', setor: 'marketing' },
+  ],
+  dataInicio: '15/08/2020',
+  statusDoProjeto: 'encerrado',
+};
 
----
+// Exercício 3
 
-A partir dessas informações, execute as tarefas a seguir:
+function adicionaProjeto(projeto) {
+  return listaDeProjetos.push(projeto);
+}
 
-1. Crie uma constante que irá receber a lista de projetos.
+console.log(listaDeProjetos, 'Lista de projetos vazia');
 
-2. Crie uma função que adiciona um objeto contendo as informações do projeto à lista de projetos.
+adicionaProjeto(projeto1); 
+adicionaProjeto(projeto2); 
+adicionaProjeto(projeto3); 
 
-3. Crie uma função que retorne a lista de projetos cadastrados com a seguinte frase "Lista de projetos".
+console.log(listaDeProjetos, 'Lista de projetos com os projetos adicionados');
 
-4. Crie uma função que retorne todos os projetos com _status_ "em andamento" com a seguinte frase "Lista de projetos em andamento"
+// Exercicio 4
 
-5. Crie uma função que retorne todos os projetos com _status_ "encerrado" com a seguinte frase "Lista de projetos encerrados"
+function listarProjetos() {
+  
+  return listaDeProjetos;
+}
 
-6. Crie uma função que retorne o total de projetos cadastrados com a seguinte frase "Temos [TOTAL] projetos cadastrados". Extra: tente fazer a frase no singular e no plural.
+console.log(listarProjetos());
 
-7. Crie uma função com as seguintes características:
+// Exercicio 5
 
-   - A função deve receber o parâmetro id do projeto
-   - Se o id do projeto existir, retorne o projeto encontrado
-   - Se o id do projeto NÃO existir, retorne a mensagem "Projeto não encontrado!"
+function posicaoDoProjeto(posicao) {
+  if (listaDeProjetos[posicao] === undefined) {
+    return `Projeto não encontrado`;
+  } else {
+    return `O "${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}"`;
+  }
+}
 
-8. Crie uma função com as seguintes características:
+console.log(posicaoDoProjeto(0)); // retorna projeto1
+console.log(posicaoDoProjeto(2)); // retorna projeto3
+console.log(posicaoDoProjeto(999)); // retorna Projeto não encontrado
 
-   - A função deve receber três parâmetros: id do projeto, id da pessoa que quer editar o projeto, novo _status_
-   - Se o id do projeto existir, então verique se o id da pessoa passado por parâmetro existe na lista de pessoas responsáveis. Se existir, então verifique se o _status_ é diferente de "encerrado" para permitir.
-   - Se o id do projeto NÃO existir, retorne a mensagem "Projeto não encontrado!"
-   - Se o id da pessoa NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem "Você não tem autorização para editar este projeto!".
-   - Se o _status_ do projeto for "encerrado", então retorne a seguinte mensagem "Esse projeto já foi encerrado e não pode ser editado!".
+// Exercicio 6
 
-9. Crie uma função com as seguintes características:
+function totalDeProjetos() {
+  let objetos = listaDeProjetos.length;
+  let plural = 'projetos cadastrados';
+  let singular = 'projeto cadastrado';
 
-   - A função deve receber dois parâmetros: id do projeto e id da pessoa que quer excluir o projeto
-   - Se o id do projeto existir, então verique se o nome passado por parâmetro existe na lista de pessoas responsáveis. Se existir, então remova o projeto da lista e retorne a seguinte mensagem "Projeto excluído!"
-   - Se o id do projeto NÃO existir, retorne a mensagem "Projeto não encontrado!"
-   - Se o nome passado por parâmetro NÃO existir na lista de pessoas responsáveis, então retorne a seguinte mensagem "Você não tem autorização para excluir este projeto!".
+  if (objetos > 1) {
+    return `Temos o total de ${objetos} ${plural}`;
+  } else {
+    return `Temos o total de ${objetos} ${singular}`;
+  }
+}
+
+console.log(totalDeProjetos()); // retorna 3
+
+// Exercicio 7
+
+function buscarProjeto7(idProjeto) {
+  
+
+  let projetoEncontrado = listaDeProjetos.find(function (projeto) {
+    return projeto.idProjeto === idProjeto;
+  });
+
+  if (projetoEncontrado !== undefined) {
+    return projetoEncontrado;
+  } else {
+    return `Projeto não encontrado`;
+  }
+}
+
+console.log(buscarProjeto7(3)); // retorna projeto3
+console.log(buscarProjeto7(999)); // retorna a mensagem
+
+// Exercicio 8
+
+function mostraresponsavel8(idProjeto, idPessoa) {
+console.log (idProjeto, idPessoa)
+  let projeto = exericicio7(idProjeto);
+
+  let responsavel = projeto.pessoasResponsaveis.find(function (responsavel) {
+
+    return responsavel.idPessoa === idPessoa;
+  });
+  if ( responsavel !== undefined || null)  { 
+      
+    return responsavel
+} else { 
+     return "Projeto não encontrado";
+
+  }
+}
+
+function seexistir(idProjeto, idPessoa) {
+ 
+    if (funcaoex7 === "Projeto não encontrado") {
+        return false;
+    }else{
+        return true;
+    }
+
+}
+
+console.log(mostraresponsavel8(1, 100));
+
+// Exercicio 9
+
+function alterarProjetos (idProjeto , idPessoa, statusDoProjeto) { // parte 1 //
+
+    let funcaoex7 = buscarProjeto(idProjeto)
+    let funcaoex8 = mostrarResponsavel(idProjeto, idPessoa)
+
+    if(funcaoex7 === "Projeto não encontrado") {
+        return "ID não existe";
+    }
+    
+    else if (funcaoex8 === false) {
+        return ("Você não tem autorização para alterar este Projeto!");
+    }
+    else if (statusDoProjeto === "encerrado") {
+        return (`O projeto ${titulodoProjeto} já foi encerrado e não pode ser editado!`);
+    
+} else {
+return "A edição do objeto será permitida!";
+}
+
+}
+
+// Exercicio 10 //
+
+function modificarProjeto( idProjeto, idPessoa) { // parte 1 //
+
+    let exericicio7 = buscarProjeto(idProjeto)
+    let exercicio8 = mostrarResponsavel(idProjeto, idPessoa)
+
+    if(exericicio7 === "Projeto não encontrado") {
+        return "ID não existe";
+    }
+    
+    else if (exercicio8 === false) {  // se o nome passado não existir //
+        return ("Você não tem autorização para alterar este Projeto!");
+        // e se existir//
+    }    if (listaDeProjetos[projeto -1].statusDoProjeto === "Em andamento") {
+                         listaDeProjetos[projeto -1].statusDoProjeto = "Encerrado" 
+                         return `Projeto ${listaDeProjetos[projeto -1].tituloProjeto} encerrado.`
+                     } else {
+                        return "Esse projeto já foi encerrado anteriormente."
+                    }
+                }
+            
+             
+            
+
+
+/* Professora, tive muita dificuldade em fazer exercicio - muita mesmo-  me esforcei ao máximo pra conseguir,
+revi a aula e vi alguns conteúdos no youtube ( e pesquisas no developer mozilla) porém pra mim que estou
+ começando do 0 acho que foi muito dificil. Me senti até triste pois não sei se estou no caminho certo por
+  não ter feito o exercicio adequadamente. Nesta semana minha bebê não estava bem o que me impossibilitou de ver as aulas de terça e quinta. //
