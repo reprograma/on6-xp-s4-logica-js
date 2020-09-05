@@ -63,19 +63,19 @@ function lista(){
 lista()
 
 // Exercício 5
-// console.log("-------------------------------Exercício 5------------------------")
+console.log("-------------------------------Exercício 5------------------------")
 
-// function encontrarProjeto(id){
-//     let pId = listaDeProjetos.idProjeto
-//     if (id = pId){
-//         console.log(`O projeto ${listaDeProjetos.tituloDoProjeto} na posição ${listaDeProjetos.idProjeto} está com o _status_ ${listaDeProjetos.statusDoProjeto}`)
+function encontrarProjeto(posicao){
+    if (listaDeProjetos[posicao] === undefined){
+        return `Projeto não encontrado`
+    }else{
+        return `"${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}"`
+    }
+}
 
-//     }else {
-//         console.log('Projeto não encontrado')
-//     }
-// }
-
-// encontrarProjeto(1)
+console.log(encontrarProjeto(0))
+console.log(encontrarProjeto(5))
+console.log(encontrarProjeto(1))
 
 // Exercício 6
 console.log("-------------------------------Exercício 6------------------------")
