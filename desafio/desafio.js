@@ -97,6 +97,7 @@ console.log(contarProjetos())
 
 // Exercício 7
 console.log("-------------------------------Exercício 7------------------------")
+
 function buscarProjeto(idProjeto){
     
 let projetoEncontrado = listaDeProjetos.find(function (projeto) {
@@ -113,3 +114,23 @@ if (projetoEncontrado !== undefined) {
 
 
 console.log(buscarProjeto(3))
+console.log(buscarProjeto(5))
+
+// Exercício 8
+console.log("-------------------------------Exercício 8------------------------")
+
+function mostrarResponsavel(idProjeto, idPessoa){
+    let projeto = buscarProjeto(idProjeto)
+    let responsavel = projeto.pessoasResponsaveis.filter(function (responsavel){
+        return responsavel.idPessoa === idPessoa;
+    })
+
+    if (responsavel !== undefined){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+console.log(mostrarResponsavel(2, 123))
+console.log(mostrarResponsavel(2, 100))
