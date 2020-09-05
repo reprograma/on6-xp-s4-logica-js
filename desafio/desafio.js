@@ -81,11 +81,19 @@ console.log(encontrarProjeto(1))
 console.log("-------------------------------Exercício 6------------------------")
 
 function contarProjetos(){
-    const total = listaDeProjetos.length
-    console.log(total)
+    let objetos = listaDeProjetos.length
+    let plural = `projetos cadastrados`
+    let singurar = `projeto cadastrado`
+
+    if (objetos > 1){
+        return `Temos o total de ${objetos} ${plural}`
+    
+    }else{
+        return `Temos o total de ${objetos} ${singular}`
+    }
 }
 
-contarProjetos()
+console.log(contarProjetos())
 
 // Exercício 7
 console.log("-------------------------------Exercício 7------------------------")
