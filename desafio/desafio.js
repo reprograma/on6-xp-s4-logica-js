@@ -6,6 +6,7 @@ const listaDeProjetos = []
 
 const projeto1 = {
     idProjeto: 1,
+
     tituloDoProjeto: 'Software X',
     descricaoDoProjeto: 'Revisar interface e resolver bugs',
     pessoasResponsaveis: [
@@ -57,17 +58,16 @@ function adicionaProjeto(projeto) {
 
 console.log(listaDeProjetos, 'Lista de projetos vazia')
 
-adicionaProjeto(projeto1); // adiciona o projeto1 a lista de projetos utilizando a função criada
-adicionaProjeto(projeto2); // adiciona o projeto2 a lista de projetos utilizando a função criada
-adicionaProjeto(projeto3); // adiciona o projeto2 a lista de projetos utilizando a função criada
+adicionaProjeto(projeto1) 
+adicionaProjeto(projeto2) 
+adicionaProjeto(projeto3)
 
 console.log(listaDeProjetos, 'Lista de projetos com os projetos adicionados');
 
 // Exercicio 4
 
 function listarProjetos() {
-    // return `Lista de projetos: ${JSON.stringify(listaDeProjetos)}`;
-    return listaDeProjetos;
+    return listaDeProjetos
 }
 
 console.log(listarProjetos())
@@ -76,31 +76,31 @@ console.log(listarProjetos())
 
 function posicaoDoProjeto(posicao) {
     if (listaDeProjetos[posicao] === undefined) {
-        return `Projeto não encontrado`;
+        return `Projeto não encontrado`
     } else {
-        return `O "${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}"`;
+        return `O "${listaDeProjetos[posicao].tituloDoProjeto}" está na posição ${posicao} e seu status é "${listaDeProjetos[posicao].statusDoProjeto}"`
     }
 }
 
-console.log(posicaoDoProjeto(0)); // retorna projeto1
-console.log(posicaoDoProjeto(2)); // retorna projeto3
-console.log(posicaoDoProjeto(999)); // retorna Projeto não encontrado
+console.log(posicaoDoProjeto(0)) // retorna projeto1
+console.log(posicaoDoProjeto(2)) // retorna projeto3
+console.log(posicaoDoProjeto(999)) // retorna Projeto não encontrado
 
 // Exercicio 6
 
 function totalDeProjetos() {
-    let objetos = listaDeProjetos.length;
-    let plural = 'projetos cadastrados';
-    let singular = 'projeto cadastrado';
+    let objetos = listaDeProjetos.length
+    let plural = 'projetos cadastrados'
+    let singular = 'projeto cadastrado'
 
     if (objetos > 1) {
-        return `Temos o total de ${objetos} ${plural}`;
+        return `Temos o total de ${objetos} ${plural}`
     } else {
-        return `Temos o total de ${objetos} ${singular}`;
+        return `Temos o total de ${objetos} ${singular}`
     }
 }
 
-console.log(totalDeProjetos()); // retorna 3
+console.log(totalDeProjetos()) // retorna 3
 
 // Exercicio 7
 
